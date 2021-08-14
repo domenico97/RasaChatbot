@@ -20,9 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57a98f60-7921-4a90-8c7c-2b6839bab7e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/RasaChatbot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RasaChatbot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/credentials.yml" beforeDir="false" afterPath="$PROJECT_DIR$/credentials.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain.yml" beforeDir="false" afterPath="$PROJECT_DIR$/domain.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +48,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/domenico97/RasaChatbot" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1wOeopveWkNul7yxxzn2WvVONFX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,6 +64,93 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RasaChatbot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="" />
+          <option name="buildCliOptions" value="" />
+          <option name="command" value="" />
+          <option name="containerName" value="" />
+          <option name="entrypoint" value="" />
+          <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.rasa-flask: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="rasa-flask" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.rasa-server: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="rasa-server" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+        <item itemvalue="Docker.docker-compose.yml.rasa-server: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.rasa-flask: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -60,6 +163,10 @@
     </task>
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -70,5 +177,44 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1638" height="234" key="GridCell.Tab.0.bottom" timestamp="1628611986671">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="234" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1628611986671" />
+    <state width="1638" height="234" key="GridCell.Tab.0.center" timestamp="1628611986670">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="234" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1628611986670" />
+    <state width="1638" height="234" key="GridCell.Tab.0.left" timestamp="1628611986669">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="234" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1628611986669" />
+    <state width="1638" height="234" key="GridCell.Tab.0.right" timestamp="1628611986670">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="234" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1628611986670" />
+    <state width="1638" height="234" key="GridCell.Tab.1.bottom" timestamp="1628611986673">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="234" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1628611986673" />
+    <state width="1638" height="234" key="GridCell.Tab.1.center" timestamp="1628611986672">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="234" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1628611986672" />
+    <state width="1638" height="234" key="GridCell.Tab.1.left" timestamp="1628611986671">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="234" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1628611986671" />
+    <state width="1638" height="234" key="GridCell.Tab.1.right" timestamp="1628611986672">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="234" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1628611986672" />
+    <state x="349" y="161" key="SettingsEditor" timestamp="1628441564078">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1628441564078" />
   </component>
 </project>

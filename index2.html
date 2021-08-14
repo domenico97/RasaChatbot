@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+</head>
+<body>
+
+<div id="webchat" role="main" style="display:none;"></div>
+<div class="chatbox__button" style="margin-top:30px;">
+    <button onclick="openBot()">Bot</button>
+</div>
+<script>
+
+//Funzione per nascondere/mostrare la chat
+  function openBot() {
+  var x = document.getElementById("webchat");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+     // Set  the CSS rules.
+     const styleSet = window.WebChat.createStyleSet({
+         bubbleBackground: 'rgba(0, 0, 255, .1)',
+         bubbleFromUserBackground: 'rgba(0, 255, 0, .1)',
+         rootHeight: '100%',
+         rootWidth: '50%',
+         backgroundColor: 'paleturquoise',
+         botAvatarImage: '<your bot avatar URL>',
+         userAvatarImage: '<your user avatar URL>'
+      });
+
+      // After generated, you can modify the CSS rules.
+      // Change font family and weight.
+      styleSet.textContent = {
+         ...styleSet.textContent,
+         fontFamily: "'Comic Sans MS', 'Arial', sans-serif",
+         fontWeight: 'bold'
+      };
+
+    // Set the avatar options.
+     const avatarOptions = {
+         botAvatarInitials: 'VS',
+         userAvatarInitials: 'Me'
+         };
+
+    window.WebChat.renderWebChat({
+      directLine: window.WebChat.createDirectLine({
+          token: 'LNimL19-QxE.exQH-f2HV6a41HD7Ba3BfBjO7YSj6gX2T8TKcoNJgdE'}),
+      styleSet,
+      styleOptions: avatarOptions
+    }, document.getElementById('webchat'));
+
+
+
+
+</script>
+</body>

@@ -11,3 +11,23 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+
+- rule: Costi e tempi di spedizione
+  steps:
+  - intent: info
+  - action: utter_info
+
+- rule: Tempi di reso
+  steps:
+  - intent: reso
+  - action: utter_reso
+
+- rule: Help
+  steps:
+  - intent: help
+  - action: utter_help

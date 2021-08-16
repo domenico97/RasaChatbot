@@ -16,11 +16,15 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - buongiorno
+    - buon pomeriggio
+    - buonasera
+    - buona sera
+    - ciao
 
 - intent: goodbye
   examples: |
     - good afternoon
-    - cu
     - good by
     - cee you later
     - good night
@@ -30,6 +34,9 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - ci vediamo
+    - a dopo
+    - a presto
 
 - intent: affirm
   examples: |
@@ -39,6 +46,8 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - si
+    - certo
 
 - intent: deny
   examples: |
@@ -66,6 +75,9 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - perfetto
+    - meraviglioso
+
 
 - intent: mood_unhappy
   examples: |
@@ -90,3 +102,44 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
+
+- intent: info
+  examples: |
+    - Tempi e costi di spedizione
+    - Tempi
+    - costi spedizione
+    - costi
+    - costo
+    - spedizione
+    - consegna 
+    - tempistica consegne
+    - arrivo prodotto
+    - tempo arrivo
+    - Quanto impiega il prodotto per arrivare?
+    - arrivo previsto
+    - Per quando è prevista la consegna?
+
+- intent: reso
+  examples: |
+    - Tempo rimborso
+    - rimborso
+    - resi
+    - effettuare reso
+    - restituzione
+    - Quanto tempo ci vuole per fare il reso?
+    - Come effettuare il reso?
+    - Tempistiche reso
+
+- intent: help
+  examples: |
+    - aiuto
+    - help
+    - Cosa sai fare?
+    - Cosa posso chiederti?
+    - Funzionalità

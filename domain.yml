@@ -19,25 +19,53 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
+- info:
+    use_entities: true
+- reso:
+    use_entities: true
+- help:
+    use_entities: true
 entities: []
 slots: {}
 responses:
   utter_greet:
-  - text: Hey! How are you?
+  - text: Ehi! Come stai?
     buttons:
-     - title: "Upload"
-       payload: 'Upload'
+     - title: "Carica immagine"
+       payload: 'Carica immagine'
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
   utter_did_that_help:
-  - text: Did that help you?
+  - text: Sono stato di aiuto?
   utter_happy:
-  - text: Great, carry on!
+  - text: Bene, è un piacere esserti stato di aiuto
   utter_goodbye:
-  - text: Bye
+  - text: È stato un piacere aiutarti, torna a trovarci presto.
+  - text: Ciao, a presto :)
   utter_iamabot:
   - text: Io sono un Bot sviluppato con Rasa.
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_info:
+  - text: I tempi di spedizione sono di 2-5 giorni. Controlla sempre il link di tracciabilità che ti inviamo per conoscere lo stato della spedizione. La spedizione standard avviene attraverso Poste Italiane ed è gratuita.
+  utter_reso:
+  - text: Gli articoli, non indossati e non danneggiati, possono essere restituiti entro 30 giorni dal momento della consegna, mentre il rimborso avviene entro 14 giorni lavorativi dalla consegna del pacco al corriere.
+  utter_help:
+  - text: Ecco alcune informazioni che potrebbero esserti utili.
+    custom:
+      payload: "collapsible"
+      data: 
+      - title: Spedizione e costi
+        description: I tempi di spedizione sono di 2-5 giorni. Controlla sempre il link di tracciabilità che ti inviamo per conoscere lo stato della spedizione. La spedizione standard avviene attraverso Poste Italiane ed è gratuita.
+      - title: Reso e rimborsi
+        description: Gli articoli, non indossati e non danneggiati, possono essere restituiti entro 30 giorni dal momento della consegna, mentre il rimborso avviene entro 14 giorni lavorativi dalla consegna del pacco al corriere.
+      - title: Cosa so fare?
+        description: Caricami un'immagine tramite l'apposito tasto in basso oppure scrivi "fai una ricerca".
+      - title: Problemi
+        description: Se riscontri qualche problema contattaci al seguente indirizzo email "domenico.trotta@live.it".
+       
+
 actions: []
 forms: {}
 e2e_actions: []

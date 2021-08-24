@@ -27,4 +27,16 @@ stories:
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: deny
-  - action: utter_goodbye
+  - action: utter_deny
+
+- story: commerce path 1
+  steps:
+  - intent: upload
+  - action: utter_upload
+
+- story: path about time
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_time
+  - action: action_show_time 

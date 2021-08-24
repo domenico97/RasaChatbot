@@ -37,6 +37,8 @@ nlu:
     - ci vediamo
     - a dopo
     - a presto
+    - arrivederci
+    - ciao ciao
 
 - intent: affirm
   examples: |
@@ -62,7 +64,9 @@ nlu:
 - intent: mood_great
   examples: |
     - perfect
+    - ok
     - great
+    - it's ok
     - amazing
     - feeling like a king
     - wonderful
@@ -103,12 +107,6 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-- intent: out_of_scope
-  examples: |
-    - I want to order food
-    - What is 2 + 2?
-    - Who's the US President?
-
 - intent: info
   examples: |
     - Tempi e costi di spedizione
@@ -143,3 +141,32 @@ nlu:
     - Cosa sai fare?
     - Cosa posso chiederti?
     - Funzionalità
+
+- intent: upload
+  examples: |
+    - upload
+    - carica
+    - carica foto
+    - carica immagine
+    - foto
+    - immagine
+    - photo
+    - image
+    - screen
+    - ricerca
+    - ricerca foto
+    - ricerca immagine
+    - ricerca prodotto
+    - ricerca maglia
+    - ricerca pantalone
+
+- intent: cart
+  examples: |
+    - aggiungi al carrello
+
+- intent: give_time
+  examples: |
+    - orario
+    - che ora è?
+    - dimmi l'orario
+    - puoi dirmi che ora è

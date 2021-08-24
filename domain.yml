@@ -25,17 +25,30 @@ intents:
     use_entities: true
 - help:
     use_entities: true
+- upload:
+    use_entities: true
+- cart:
+    use_entities: true
+- give_time:
+    use_entities: true
 entities: []
 slots: {}
 responses:
   utter_greet:
-  - text: Ehi! Come stai?
-    buttons:
-     - title: "Carica immagine"
-       payload: 'Carica immagine'
+  - text: Ciao, sono il bot Visual Shopper e sono qui per assisterti.
+    custom:
+      payload: quickReplies
+      data: 
+      - title: "Carica foto"
+        payload: "upload"
+      - title: "Help"
+        payload: "help"
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
+    buttons:
+     - title: "Carica immagine"
+       payload: 'Carica immagine'
   utter_did_that_help:
   - text: Sono stato di aiuto?
   utter_happy:
@@ -61,11 +74,19 @@ responses:
       - title: Reso e rimborsi
         description: Gli articoli, non indossati e non danneggiati, possono essere restituiti entro 30 giorni dal momento della consegna, mentre il rimborso avviene entro 14 giorni lavorativi dalla consegna del pacco al corriere.
       - title: Cosa so fare?
-        description: Caricami un'immagine tramite l'apposito tasto in basso oppure scrivi "fai una ricerca".
+        description: Caricami un'immagine tramite l'apposito tasto in basso oppure scrivi "ricerca".
       - title: Problemi
         description: Se riscontri qualche problema contattaci al seguente indirizzo email "domenico.trotta@live.it".
-       
-
-actions: []
+  utter_upload:
+  - text: 'Carica una immagine cliccando sul seguente pulsante'
+    buttons:
+     - title: "Carica immagine"
+       payload: "upload"
+  utter_deny:
+  - text: 'Ci dispiace non esserti stato di aiuto, riprova caricando una nuova foto.'
+  utter_cart:
+  - text: "Il prodotto è stato aggiunto al carrello."
+actions: 
+  - action_show_time
 forms: {}
 e2e_actions: []

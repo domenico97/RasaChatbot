@@ -31,3 +31,18 @@ rules:
   steps:
   - intent: help
   - action: utter_help
+
+- rule: Upload
+  steps:
+  - intent: upload
+  - action: utter_upload
+
+- rule: Deny
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- rule: Cart
+  steps:
+  - intent: cart
+  - action: utter_cart

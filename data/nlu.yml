@@ -1,6 +1,10 @@
 version: "2.0"
 
 nlu:
+- regex: image
+  examples: |
+    - \[\w-]+\.(jpg|png|jpeg)
+
 - intent: greet
   examples: |
     - hey
@@ -102,10 +106,12 @@ nlu:
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - chi sei
+    - cosa sei?
+    - sei un bot
+    - sei un umano
+    - sto parlando con un bot?
+    - sto parlando con un umano?
 
 - intent: info
   examples: |
@@ -133,6 +139,7 @@ nlu:
     - Quanto tempo ci vuole per fare il reso?
     - Come effettuare il reso?
     - Tempistiche reso
+    - entro quando posso restituire il prodotto?
 
 - intent: help
   examples: |
@@ -163,10 +170,12 @@ nlu:
 - intent: cart
   examples: |
     - aggiungi al carrello
+    - carrello
 
-- intent: give_time
+- intent: detection
   examples: |
-    - orario
-    - che ora è?
-    - dimmi l'orario
-    - puoi dirmi che ora è
+    - detection [image.png] (image)
+
+- intent: no_object_detected
+  examples: |
+    - nessun oggetto individuato

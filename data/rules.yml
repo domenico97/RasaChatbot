@@ -42,7 +42,4 @@ rules:
   - intent: deny
   - action: utter_deny
 
-- rule: Cart
-  steps:
-  - intent: cart
-  - action: utter_cart
+

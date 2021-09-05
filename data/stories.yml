@@ -5,16 +5,15 @@ stories:
 - story: happy path
   steps:
   - intent: greet
-  - action: utter_greet
+  - action: action_hello_world
   - intent: mood_great
   - action: utter_happy
 
 - story: sad path 1
   steps:
   - intent: greet
-  - action: utter_greet
+  - action: action_hello_world
   - intent: mood_unhappy
-  - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
@@ -22,21 +21,33 @@ stories:
 - story: sad path 2
   steps:
   - intent: greet
-  - action: utter_greet
+  - action: action_hello_world
   - intent: mood_unhappy
-  - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: deny
   - action: utter_deny
 
-- story: commerce path 1
+- story: commerce path no valid
   steps:
   - intent: upload
   - action: utter_upload
+  - intent: no_object_detected
+  - action: utter_no_object_detected
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny
 
-- story: path about time
+- story: commerce path valid
+  steps:
+  - intent: upload
+  - action: utter_upload
+  - intent: cart
+  - action: utter_cart
+  - action: utter_did_that_help
+
+- story: Hello world
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: give_time
-  - action: action_show_time 
+  - action: action_hello_world
+
+

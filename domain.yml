@@ -31,35 +31,32 @@ intents:
     use_entities: true
 - give_time:
     use_entities: true
-entities: []
+- no_object_detected:
+    use_entities: true
+- detection:
+    use_entities: true
+entities:
+  - image
 slots: {}
 responses:
-  utter_greet:
-  - text: Ciao, sono il bot Visual Shopper e sono qui per assisterti.
+  utter_did_that_help:
+  - text: Sono stato di aiuto?
     custom:
       payload: quickReplies
       data: 
-      - title: "Carica foto"
-        payload: "upload"
-      - title: "Help"
-        payload: "help"
-  utter_cheer_up:
-  - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
-    buttons:
-     - title: "Carica immagine"
-       payload: 'Carica immagine'
-  utter_did_that_help:
-  - text: Sono stato di aiuto?
+      - title: "Si"
+        payload: "si"
+      - title: "No"
+        payload: "no"
   utter_happy:
-  - text: Bene, è un piacere esserti stato di aiuto
+  - text: Bene, è un piacere esserti stato di aiuto 😊
   utter_goodbye:
-  - text: È stato un piacere aiutarti, torna a trovarci presto.
-  - text: Ciao, a presto :)
+  - text: È stato un piacere aiutarti, torna a trovarci presto 😉
+  - text: Ciao, a presto 👋🏼
   utter_iamabot:
-  - text: Io sono un Bot sviluppato con Rasa.
+  - text: Io sono un Bot sviluppato con Rasa 🤖
   utter_please_rephrase:
-  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  - text: Scusami, non ho capito. Potresti ripetere? 
   utter_info:
   - text: I tempi di spedizione sono di 2-5 giorni. Controlla sempre il link di tracciabilità che ti inviamo per conoscere lo stato della spedizione. La spedizione standard avviene attraverso Poste Italiane ed è gratuita.
   utter_reso:
@@ -86,7 +83,10 @@ responses:
   - text: 'Ci dispiace non esserti stato di aiuto, riprova caricando una nuova foto.'
   utter_cart:
   - text: "Il prodotto è stato aggiunto al carrello."
+  utter_no_object_detected:
+  - text: 'Mi dispiace, ma non sono stato in grado di individuare nulla. Carica foto simili a quella mostrata di seguito'
+    image: https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg):focal(1286x278:1288x276)/origin-imgresizer.eurosport.com/2021/06/04/3145741-64470548-2560-1440.jpg
 actions: 
-  - action_show_time
+  - action_hello_world
 forms: {}
 e2e_actions: []

@@ -98,7 +98,7 @@ class Server(object):
             self.listening = True
 
             try:
-                conn, _ = self.socket.accept() # pylint:disable=no-member
+                conn, _ = self.socket.accept()
             except socket.timeout:
                 if self.raise_on_timeout:
                     raise

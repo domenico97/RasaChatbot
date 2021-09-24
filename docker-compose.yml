@@ -1,19 +1,8 @@
 version: '3.8'
 services:
-  rasa-flask:
-    image: rasa-chatbot:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: rasa-chat-app
-    volumes: 
-      - .:/rasa_app
-    ports:
-      - 5000:5000
-    command: python3 app.py
   rasa-server:
     image: rasa/rasa:2.8.2-full
-    container_name: rasa-chatbot-server
+    container_name: rasa_server
     volumes: 
       - .:/app
     ports:
@@ -25,4 +14,4 @@ services:
     volumes:
      - ./actions:/app/actions
     ports:
-      - 5056:5056
+      - 5055:5055

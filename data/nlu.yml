@@ -1,10 +1,5 @@
 version: "2.0"
-
 nlu:
-- regex: image
-  examples: |
-    - \[\w-]+\.(jpg|png|jpeg)
-
 - intent: greet
   examples: |
     - hey
@@ -25,7 +20,6 @@ nlu:
     - buonasera
     - buona sera
     - ciao
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -43,7 +37,6 @@ nlu:
     - a presto
     - arrivederci
     - ciao ciao
-
 - intent: affirm
   examples: |
     - yes
@@ -54,7 +47,6 @@ nlu:
     - correct
     - si
     - certo
-
 - intent: deny
   examples: |
     - no
@@ -64,7 +56,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -85,8 +76,6 @@ nlu:
     - so perfect
     - perfetto
     - meraviglioso
-
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -103,7 +92,6 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - chi sei
@@ -112,7 +100,6 @@ nlu:
     - sei un umano
     - sto parlando con un bot?
     - sto parlando con un umano?
-
 - intent: info
   examples: |
     - Tempi e costi di spedizione
@@ -121,14 +108,13 @@ nlu:
     - costi
     - costo
     - spedizione
-    - consegna 
+    - consegna
     - tempistica consegne
     - arrivo prodotto
     - tempo arrivo
     - Quanto impiega il prodotto per arrivare?
     - arrivo previsto
     - Per quando è prevista la consegna?
-
 - intent: reso
   examples: |
     - Tempo rimborso
@@ -140,7 +126,7 @@ nlu:
     - Come effettuare il reso?
     - Tempistiche reso
     - entro quando posso restituire il prodotto?
-
+    - rosso
 - intent: help
   examples: |
     - aiuto
@@ -148,7 +134,26 @@ nlu:
     - Cosa sai fare?
     - Cosa posso chiederti?
     - Funzionalità
-
+- intent: cart
+  examples: |
+    - aggiungi al carrello
+    - carrello
+- intent: detection
+  examples: |
+    - detection [image.png] {"entity": "image"}
+- intent: no_object_detected
+  examples: |
+    - nessun oggetto individuato
+- intent: search_function
+  examples: |
+    - voglio cercare un prodotto
+    - cerca prodotto
+    - ricerca maglia
+    - ricerca pantalone
+    - ricerca maglietta
+    - ricerca un pantaloncino
+    - cerca una t-shirt
+    - ricerca
 - intent: upload
   examples: |
     - upload
@@ -160,22 +165,12 @@ nlu:
     - photo
     - image
     - screen
-    - ricerca
-    - ricerca foto
-    - ricerca immagine
-    - ricerca prodotto
-    - ricerca maglia
-    - ricerca pantalone
-
-- intent: cart
+- intent: search_product_by_text
   examples: |
-    - aggiungi al carrello
-    - carrello
-
-- intent: detection
+    - text search
+    - ricerca tramite testo
+    - ricerca tramite filtri
+    - search by text
+- regex: image
   examples: |
-    - detection [image.png] (image)
-
-- intent: no_object_detected
-  examples: |
-    - nessun oggetto individuato
+    - \[\w-]+\.(jpg|png|jpeg)

@@ -42,4 +42,24 @@ rules:
   - intent: deny
   - action: utter_deny
 
+- rule: Search
+  steps:
+  - intent: search_function
+  - action: utter_search_function
 
+- rule: Activate form
+  steps:
+  - intent: search_product_by_text
+  - action: product_form
+  - active_loop: product_form
+
+- rule: Submit form
+  condition:
+  - active_loop: product_form
+  steps:
+  - action: product_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_slots_values
+  - action: action_search_by_text

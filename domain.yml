@@ -7,6 +7,10 @@ session_config:
 intents:
 - greet:
     use_entities: true
+- type_of_product:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
 - goodbye:
     use_entities: true
 - affirm:
@@ -35,19 +39,49 @@ intents:
     use_entities: true
 - detection:
     use_entities: true
+- search_function:
+    use_entities: true
+- search_product_by_text:
+    use_entities: true
 entities:
-  - image
-slots: {}
+- colour
+- image
+- product
+slots:
+  product:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  colour:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
-  utter_did_that_help:
-  - text: Sono stato di aiuto?
-    custom:
+  utter_greet:
+  - custom:
+      data:
+      - payload: cerca prodotto
+        title: Effettua una ricerca
+      - payload: help
+        title: Help
       payload: quickReplies
-      data: 
-      - title: "Si"
-        payload: "si"
-      - title: "No"
-        payload: "no"
+    text: Ciao, sono il bot Visual Shopper e sono qui per assisterti.
+  utter_did_that_help:
+  - custom:
+      data:
+      - payload: si
+        title: Si
+      - payload: no
+        title: No
+      payload: quickReplies
+    text: Sono stato di aiuto?
   utter_happy:
   - text: Bene, è un piacere esserti stato di aiuto 😊
   utter_goodbye:
@@ -56,37 +90,98 @@ responses:
   utter_iamabot:
   - text: Io sono un Bot sviluppato con Rasa 🤖
   utter_please_rephrase:
-  - text: Scusami, non ho capito. Potresti ripetere? 
+  - text: Scusami, non ho capito. Potresti ripetere?
   utter_info:
   - text: I tempi di spedizione sono di 2-5 giorni. Controlla sempre il link di tracciabilità che ti inviamo per conoscere lo stato della spedizione. La spedizione standard avviene attraverso Poste Italiane ed è gratuita.
   utter_reso:
   - text: Gli articoli, non indossati e non danneggiati, possono essere restituiti entro 30 giorni dal momento della consegna, mentre il rimborso avviene entro 14 giorni lavorativi dalla consegna del pacco al corriere.
   utter_help:
-  - text: Ecco alcune informazioni che potrebbero esserti utili.
-    custom:
-      payload: "collapsible"
-      data: 
-      - title: Spedizione e costi
-        description: I tempi di spedizione sono di 2-5 giorni. Controlla sempre il link di tracciabilità che ti inviamo per conoscere lo stato della spedizione. La spedizione standard avviene attraverso Poste Italiane ed è gratuita.
-      - title: Reso e rimborsi
-        description: Gli articoli, non indossati e non danneggiati, possono essere restituiti entro 30 giorni dal momento della consegna, mentre il rimborso avviene entro 14 giorni lavorativi dalla consegna del pacco al corriere.
-      - title: Cosa so fare?
-        description: Caricami un'immagine tramite l'apposito tasto in basso oppure scrivi "ricerca".
-      - title: Problemi
-        description: Se riscontri qualche problema contattaci al seguente indirizzo email "domenico.trotta@live.it".
+  - custom:
+      data:
+      - description: I tempi di spedizione sono di 2-5 giorni. Controlla sempre il link di tracciabilità che ti inviamo per conoscere lo stato della spedizione. La spedizione standard avviene attraverso Poste Italiane ed è gratuita.
+        title: Spedizione e costi
+      - description: Gli articoli, non indossati e non danneggiati, possono essere restituiti entro 30 giorni dal momento della consegna, mentre il rimborso avviene entro 14 giorni lavorativi dalla consegna del pacco al corriere.
+        title: Reso e rimborsi
+      - description: Puoi effettuare la ricerca di un prodotto di tuo interesse. La ricerca può essere effettuata anche caricando un'immagine. Digita "ricerca" e ti guiderò passo passo 😊.
+        title: Cosa so fare?
+      - description: Se riscontri qualche problema contattaci al seguente indirizzo email "domenico.trotta@live.it".
+        title: Problemi
+      payload: collapsible
+    text: Ecco alcune informazioni che potrebbero esserti utili.
   utter_upload:
-  - text: 'Carica una immagine cliccando sul seguente pulsante'
-    buttons:
-     - title: "Carica immagine"
-       payload: "upload"
+  - buttons:
+    - payload: upload
+      title: Carica immagine
+    text: Carica una immagine cliccando sul seguente pulsante
   utter_deny:
-  - text: 'Ci dispiace non esserti stato di aiuto, riprova caricando una nuova foto.'
+  - text: Ci dispiace non esserti stato di aiuto, riprova caricando una nuova foto.
   utter_cart:
-  - text: "Il prodotto è stato aggiunto al carrello."
+  - text: Il prodotto è stato aggiunto al carrello.
   utter_no_object_detected:
-  - text: 'Mi dispiace, ma non sono stato in grado di individuare nulla. Carica foto simili a quella mostrata di seguito'
-    image: https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg):focal(1286x278:1288x276)/origin-imgresizer.eurosport.com/2021/06/04/3145741-64470548-2560-1440.jpg
-actions: 
-  - action_hello_world
-forms: {}
+  - image: https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg):focal(1286x278:1288x276)/origin-imgresizer.eurosport.com/2021/06/04/3145741-64470548-2560-1440.jpg
+    text: Mi dispiace, ma non sono stato in grado di individuare nulla. Carica foto simili a quella mostrata di seguito
+  utter_ask_product:
+  - text: Seleziona la tipologia di prodotto da ricercare
+    custom:
+      payload: dropDown
+      data:
+      - label: Qualsiasi
+        value: "Qualsiasi"
+      - label: Maglietta/T-Shirt
+        value: "Maglia"
+      - label: Pantaloncino/Shorts
+        value: "Pantaloncini"
+      
+  utter_ask_colour:
+  - text: Seleziona il colore che preferisci
+    custom:
+      payload: dropDown
+      data:
+      - label: Qualsiasi
+        value: "Qualsiasi"
+      - label: Rosso
+        value: "Rosso"
+      - label: Blue
+        value: "Blue"
+      - label: Giallo
+        value: "Giallo"
+      - label: Marrone
+        value: "Marrone"
+      - label: Arancione
+        value: "Arancione"
+      - label: Verde
+        value: "Verde"
+      - label: Nero
+        value: "Nero"
+      - label: Viola
+        value: "Viola"
+      - label: Rosa
+        value: "Rosa"
+      - label: Bianco
+        value: "Bianco"
+      - label: Grigio
+        value: "Grigio"
+  utter_slots_values:
+  - text: Perfetto, allora inizio la ricerca per {product} {colour}!
+  utter_search_function:
+  - custom:
+      data:
+      - payload: upload
+        title: Ricerca tramite foto
+      - payload: text search
+        title: Ricerca tramite filtri
+      payload: quickReplies
+    text: Per cercare un prodotto puoi caricare un'immagine oppure puoi effettuare una ricerca tramite filtri
+actions:
+- action_search_by_text
+- utter_ask_product
+- utter_ask_colour
+- utter_slots_values
+forms:
+  product_form:
+    required_slots:
+      product:
+      - type: from_text
+      colour:
+      - type: from_text
 e2e_actions: []

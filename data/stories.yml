@@ -5,14 +5,14 @@ stories:
 - story: happy path
   steps:
   - intent: greet
-  - action: action_hello_world
+  - action: utter_greet
   - intent: mood_great
   - action: utter_happy
 
 - story: sad path 1
   steps:
   - intent: greet
-  - action: action_hello_world
+  - action: utter_greet
   - intent: mood_unhappy
   - action: utter_did_that_help
   - intent: affirm
@@ -21,7 +21,7 @@ stories:
 - story: sad path 2
   steps:
   - intent: greet
-  - action: action_hello_world
+  - action: utter_greet
   - intent: mood_unhappy
   - action: utter_did_that_help
   - intent: deny
@@ -48,6 +48,27 @@ stories:
 - story: Hello world
   steps:
   - intent: greet
-  - action: action_hello_world
+  - action: utter_greet
 
-
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search_function
+  - action: utter_search_function
+  - intent: search_product_by_text
+  - action: product_form
+  - active_loop: product_form
+  - slot_was_set:
+    - requested_slot: product
+  - slot_was_set:
+    - product: maglia
+  - slot_was_set:
+    - requested_slot: colour
+  - slot_was_set:
+    - colour: rosso
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_slots_values
+  - action: action_search_by_text

@@ -3,5 +3,5 @@
 # attempts to import encodings.idna but blocks on the import lock. Verify
 # that gevent avoids this deadlock.
 
-import getaddrinfo_module # pylint:disable=import-error
+import getaddrinfo_module
 del getaddrinfo_module  # fix pyflakes

@@ -47,27 +47,23 @@ class customAction(Action):
             # Codice per fare una api call
             #r = requests.post('http://127.0.0.1:5001/predict', data = {'id':'1_short_sleeve_top_3145741-64470548-2560-1440.jpg'})
 
+            #get del valore contenuto negli slot product e colour 
             product_type = tracker.get_slot('product')
             color_value = tracker.get_slot('colour')
 
             print(product_type)
             print(color_value)
             
-            #r = requests.post('http://127.0.0.1:5001/search', data = {'type': product_type, 'color': color_value})
-        
-
-            '''if(product_type == "maglia"):
-                        #send the message back to the user
-                        dispatcher.utter_message(text="Vuoi che ricerchi una " + product_type + " di colore " +  color_value + "?", buttons = [{"payload": "si", "title": "Si"},{"payload": "no", "title": "No"}]) 
-                    else:
-                        #send the message back to the user
-                        dispatcher.utter_message(text="Vuoi che ricerchi un " + product_type + " di colore " +  color_value + "?", buttons = [{"payload": "si", "title": "Si"},{"payload": "no", "title": "No"}])'''
+            #Chiamata all'API search con invio dei parametri "product_type" e "color_value"
+            r = requests.post('http://127.0.0.1:5001/search', data = {'type': product_type, 'color': color_value})
+            #print(r.text)
+            lenght = len(r.text)
+            print(len("[Query]"))
+            if (lenght == len('["Query"]')):
+                 dispatcher.utter_message(text="Non sono stati trovati articoli per la ricerca " + product_type + " di colore " + color_value)
+            else:
+                #return dei risultati della chiamata all'API search 
+                dispatcher.utter_message(text=r.text)
             
-            product_type = tracker.get_slot('product')
-            color_value = tracker.get_slot('colour')
-            print(product_type)
-            print(color_value)
-            dispatcher.utter_message(text="OK")
-
-            #dispatcher.utter_message(text="Vuoi che ricerchi una " + product_type + " di colore " +  color_value + "?", buttons = [{"payload": "si", "title": "Si"},{"payload": "no", "title": "No"}]) 
+            #reset di tutti gli slot 
             return [AllSlotsReset()]

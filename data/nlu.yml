@@ -154,17 +154,27 @@ nlu:
     - ricerca un pantaloncino
     - cerca una t-shirt
     - ricerca
+    - Vorrei cercare una [maglia]{"entity": "product", "value":"Maglia"} di colore [rosso]{"entity": "colour", "value":"Rosso"}
+    - [maglietta]{"entity": "product", "value":"Maglia"} di colore [verde]{"entity": "colour", "value":"Verde"}
+    - [t-shirt]{"entity": "product", "value":"Maglia"} di colore [giallo]{"entity": "colour", "value":"Giallo"}
+    - cerca [maglia]{"entity": "product", "value":"Maglia"} con colore [viola]{"entity": "colour", "value":"Viola"}
+    - Vorrei cercare un [pantalone]{"entity": "product", "value":"Pantaloncino"} di colore [nero]{"entity": "colour", "value":"Nero"}
+    - [pantaloncino]{"entity": "product", "value":"Pantaloncino"} di colore [bianco]{"entity": "colour", "value":"Bianco"}
+    - [shorts]{"entity": "product","value":"Pantaloncino"} di colore [arancione]{"entity": "colour", "value":"Arancione"}
+    - cerca [pantalone]{"entity": "product", "value":"Pantaloncino"} con colore [blu]{"entity": "colour","value":"Blu"}
 - intent: upload
   examples: |
     - upload
     - carica
-    - carica foto
-    - carica immagine
     - foto
     - immagine
     - photo
     - image
     - screen
+    - carica foto
+    - carica immagine
+    - voglio caricare una foto
+    - voglio caricare un'immagine
 - intent: search_product_by_text
   examples: |
     - text search

@@ -57,13 +57,16 @@ class customAction(Action):
             #Chiamata all'API search con invio dei parametri "product_type" e "color_value"
             r = requests.post('http://127.0.0.1:5001/search', data = {'type': product_type, 'color': color_value})
             #print(r.text)
-            lenght = len(r.text)
-            print(len("[Query]"))
-            if (lenght == len('["Query"]')):
-                 dispatcher.utter_message(text="Non sono stati trovati articoli per la ricerca " + product_type + " di colore " + color_value)
+            #lenght = len(r.text)
+            print(r.text)
+
+            if (r.text == "[]"):
+                 message = "Mi dispiace, ma non sono stati trovati articoli per la ricerca: " + product_type + " di colore " + color_value
+                 dispatcher.utter_message(text=message)
             else:
                 #return dei risultati della chiamata all'API search 
-                dispatcher.utter_message(text=r.text)
+                msg = { "type": "query_results", "payload": { "title": "Query results", "src": r.text } }
+                dispatcher.utter_message(text="Questi sono i prodotti disponibili: ",attachment = msg)
             
             #reset di tutti gli slot 
             return [AllSlotsReset()]

@@ -63,3 +63,4 @@ rules:
     - requested_slot: null
   - action: utter_slots_values
   - action: action_search_by_text
+  - action: utter_did_that_help

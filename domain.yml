@@ -104,7 +104,7 @@ responses:
         title: Reso e rimborsi
       - description: Puoi effettuare la ricerca di un prodotto di tuo interesse. La ricerca può essere effettuata anche caricando un'immagine. Digita "ricerca" e ti guiderò passo passo 😊.
         title: Cosa so fare?
-      - description: Se riscontri qualche problema contattaci al seguente indirizzo email "domenico.trotta@live.it".
+      - description: Se riscontri qualche problema contattaci al seguente indirizzo email "visual.shopper@outlook.com".
         title: Problemi
       payload: collapsible
     text: Ecco alcune informazioni che potrebbero esserti utili.
@@ -114,7 +114,7 @@ responses:
       title: Carica immagine
     text: Carica una immagine cliccando sul seguente pulsante
   utter_deny:
-  - text: Ci dispiace non esserti stato di aiuto, riprova caricando una nuova foto.
+  - text: Ci dispiace non esserti stato di aiuto, riprova effettuando una nuova ricerca.
   utter_cart:
   - text: Il prodotto è stato aggiunto al carrello.
   utter_no_object_detected:
@@ -130,7 +130,7 @@ responses:
       - label: Maglietta/T-Shirt
         value: "Maglia"
       - label: Pantaloncino/Shorts
-        value: "Pantaloncini"
+        value: "Pantaloncino"
       
   utter_ask_colour:
   - text: Seleziona il colore che preferisci
@@ -141,8 +141,8 @@ responses:
         value: "Qualsiasi"
       - label: Rosso
         value: "Rosso"
-      - label: Blue
-        value: "Blue"
+      - label: Blu
+        value: "Blu"
       - label: Giallo
         value: "Giallo"
       - label: Marrone
@@ -162,7 +162,7 @@ responses:
       - label: Grigio
         value: "Grigio"
   utter_slots_values:
-  - text: Perfetto, allora inizio la ricerca per {product} {colour}!
+  - text: Perfetto, allora inizio la ricerca per {product} di colore {colour}!
   utter_search_function:
   - custom:
       data:

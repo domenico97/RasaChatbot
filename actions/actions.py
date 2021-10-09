@@ -48,8 +48,8 @@ class customAction(Action):
             #r = requests.post('http://127.0.0.1:5001/predict', data = {'id':'1_short_sleeve_top_3145741-64470548-2560-1440.jpg'})
 
             #get del valore contenuto negli slot product e colour 
-            product_type = tracker.get_slot('product')
-            color_value = tracker.get_slot('colour')
+            product_type = tracker.get_slot('product').capitalize()
+            color_value = tracker.get_slot('colour').capitalize()
 
             print(product_type)
             print(color_value)
@@ -58,7 +58,8 @@ class customAction(Action):
             r = requests.post('http://127.0.0.1:5001/search', data = {'type': product_type, 'color': color_value})
             #print(r.text)
             #lenght = len(r.text)
-            print(r.text)
+            
+            #print(r.text)
 
             if (r.text == "[]"):
                  message = "Mi dispiace, ma non sono stati trovati articoli per la ricerca: " + product_type + " di colore " + color_value

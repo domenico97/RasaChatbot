@@ -83,7 +83,7 @@ responses:
       payload: quickReplies
     text: Sono stato di aiuto?
   utter_happy:
-  - text: Bene, è un piacere esserti stato di aiuto 😊
+  - text: Bene, è stato un piacere poterti aiutare 😊
   utter_goodbye:
   - text: È stato un piacere aiutarti, torna a trovarci presto 😉
   - text: Ciao, a presto 👋🏼
@@ -114,7 +114,7 @@ responses:
       title: Carica immagine
     text: Carica una immagine cliccando sul seguente pulsante
   utter_deny:
-  - text: Ci dispiace non esserti stato di aiuto, riprova effettuando una nuova ricerca.
+  - text: Mi dispiace non esserti stato di aiuto, riprova effettuando una nuova ricerca.
   utter_cart:
   - text: Il prodotto è stato aggiunto al carrello.
   utter_no_object_detected:

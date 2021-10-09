@@ -148,20 +148,25 @@ nlu:
   examples: |
     - voglio cercare un prodotto
     - cerca prodotto
-    - ricerca maglia
-    - ricerca pantalone
-    - ricerca maglietta
-    - ricerca un pantaloncino
-    - cerca una t-shirt
+    - ricerca [maglia]{"entity": "product", "value":"Maglia"}
+    - ricerca [pantalone]{"entity": "product", "value":"Pantaloncino"}
+    - ricerca [maglietta]{"entity": "product", "value":"Maglia"}
+    - ricerca un [pantaloncino]{"entity": "product", "value":"Pantaloncino"}
+    - cerca una [t-shirt]{"entity": "product", "value":"Maglia"}
     - ricerca
-    - Vorrei cercare una [maglia]{"entity": "product", "value":"Maglia"} di colore [rosso]{"entity": "colour", "value":"Rosso"}
-    - [maglietta]{"entity": "product", "value":"Maglia"} di colore [verde]{"entity": "colour", "value":"Verde"}
-    - [t-shirt]{"entity": "product", "value":"Maglia"} di colore [giallo]{"entity": "colour", "value":"Giallo"}
-    - cerca [maglia]{"entity": "product", "value":"Maglia"} con colore [viola]{"entity": "colour", "value":"Viola"}
-    - Vorrei cercare un [pantalone]{"entity": "product", "value":"Pantaloncino"} di colore [nero]{"entity": "colour", "value":"Nero"}
-    - [pantaloncino]{"entity": "product", "value":"Pantaloncino"} di colore [bianco]{"entity": "colour", "value":"Bianco"}
-    - [shorts]{"entity": "product","value":"Pantaloncino"} di colore [arancione]{"entity": "colour", "value":"Arancione"}
-    - cerca [pantalone]{"entity": "product", "value":"Pantaloncino"} con colore [blu]{"entity": "colour","value":"Blu"}
+    - Vorrei cercare una [maglia]{"entity": "product", "value":"Maglia"} di colore [Rosso]{"entity": "colour", "value":"Rosso"}
+    - [maglietta]{"entity": "product", "value":"Maglia"} di colore [Verde]{"entity": "colour", "value":"Verde"}
+    - [t-shirt]{"entity": "product", "value":"Maglia"} di colore [Giallo]{"entity": "colour", "value":"Giallo"}
+    - cerca [maglia]{"entity": "product", "value":"Maglia"} con colore [Viola]{"entity": "colour", "value":"Viola"}
+    - Vorrei cercare un [pantalone]{"entity": "product", "value":"Pantaloncino"} di colore [Nero]{"entity": "colour", "value":"Nero"}
+    - [pantaloncino]{"entity": "product", "value":"Pantaloncino"} di colore [Bianco]{"entity": "colour", "value":"Bianco"}
+    - [shorts]{"entity": "product","value":"Pantaloncino"} di colore [Arancione]{"entity": "colour", "value":"Arancione"}
+    - cerca [pantalone]{"entity": "product", "value":"Pantaloncino"} con colore [Blu]{"entity": "colour","value":"Blu"}
+    - ricerca [maglietta a maniche corte]{"entity": "product", "value":"Maglia"} con colore [Rosa]{"entity": "colour", "value":"Rosa"}
+    - cercami un [pantalone da calcio]{"entity": "product", "value":"Pantaloncino"} di colore [Grigio]{"entity": "colour", "value":"Grigio"}
+    - trovami un [calzoncino]{"entity": "product", "value":"Pantaloncino"} colore [Marrone]{"entity": "colour", "value":"Marrone"}
+    - trovami un [maglia]{"entity": "product", "value":"Maglia"} di colore [rossa]{"entity": "colour", "value":"Rosso"}
+    - cerca [pantalone]{"entity": "product", "value":"Pantaloncino"} con colore [Blue]{"entity": "colour","value":"Blu"}
 - intent: upload
   examples: |
     - upload
@@ -184,3 +189,12 @@ nlu:
 - regex: image
   examples: |
     - \[\w-]+\.(jpg|png|jpeg)
+
+- lookup: colour
+  examples: |
+    - Giallo
+    - Verde
+    - Nero
+    - Rosso
+    - Grigio
+    - Rosa

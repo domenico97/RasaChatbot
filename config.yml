@@ -14,6 +14,15 @@ pipeline:
       analyzer: char_wb
       min_ngram: 1
       max_ngram: 4
+    - name: RegexEntityExtractor
+      # text will be processed with case insensitive as default
+      case_sensitive: False
+      # use lookup tables to extract entities
+      use_lookup_tables: False
+      # use regexes to extract entities
+      use_regexes: True
+      # use match word boundaries for lookup table
+      "use_word_boundaries": True
     - name: DIETClassifier
       epochs: 100
       constrain_similarities: true

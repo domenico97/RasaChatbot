@@ -43,6 +43,8 @@ intents:
     use_entities: true
 - search_product_by_text:
     use_entities: true
+- obj_detection:
+    use_entities: true
 entities:
 - colour
 - image
@@ -54,6 +56,11 @@ slots:
     auto_fill: true
     influence_conversation: true
   colour:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  image:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
@@ -177,6 +184,7 @@ actions:
 - utter_ask_product
 - utter_ask_colour
 - utter_slots_values
+- action_detection
 forms:
   product_form:
     required_slots:

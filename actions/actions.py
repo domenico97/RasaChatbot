@@ -53,6 +53,7 @@ class customAction(Action):
 
             print(product_type)
             print(color_value)
+           
             
             #Chiamata all'API search con invio dei parametri "product_type" e "color_value"
             r = requests.post('http://127.0.0.1:5001/search', data = {'type': product_type, 'color': color_value})

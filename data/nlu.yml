@@ -167,6 +167,7 @@ nlu:
     - trovami un [calzoncino]{"entity": "product", "value":"Pantaloncino"} colore [Marrone]{"entity": "colour", "value":"Marrone"}
     - trovami un [maglia]{"entity": "product", "value":"Maglia"} di colore [rossa]{"entity": "colour", "value":"Rosso"}
     - cerca [pantalone]{"entity": "product", "value":"Pantaloncino"} con colore [Blue]{"entity": "colour","value":"Blu"}
+    - trova una [maglia]{"entity": "product", "value":"Maglia"} [nera]{"entity": "colour", "value":"Nero"}
 - intent: upload
   examples: |
     - upload
@@ -188,7 +189,18 @@ nlu:
     - search by text
 - regex: image
   examples: |
-    - \[\w-]+\.(jpg|png|jpeg)
+    - .*\.(gif|jpe?g|bmp|png)
+- intent: obj_detection
+  examples: |
+    - [image.png](image)
+    - [image.jpg](image)
+    - [short_sleeve_top_image.jpg](image)
+    - [vest_image.jpg](image)
+    - [trousers_image.jpg](image)
+    - [shorts_image.jpg](image)
+    - [skirt_image.jpg](image)
+    - [short_sleeve_dress_image.jpg](image)
+
 
 - lookup: colour
   examples: |

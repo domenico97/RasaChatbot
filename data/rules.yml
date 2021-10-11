@@ -64,3 +64,8 @@ rules:
   - action: utter_slots_values
   - action: action_search_by_text
   - action: utter_did_that_help
+
+- rule: Detection
+  steps:
+  - intent: obj_detection
+  - action: action_detection

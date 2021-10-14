@@ -190,23 +190,10 @@ nlu:
 - regex: image
   examples: |
     - .*\.(gif|jpe?g|bmp|png)
+    - /(?<=:")[^"]*\.(?:jpe?g|png|bmp)/ig
 - intent: obj_detection
   examples: |
-    - [image.png](image)
-    - [image.jpg](image)
-    - [short_sleeve_top_image.jpg](image)
-    - [vest_image.jpg](image)
-    - [trousers_image.jpg](image)
-    - [shorts_image.jpg](image)
-    - [skirt_image.jpg](image)
-    - [short_sleeve_dress_image.jpg](image)
+    - detection_[image.png](image)
+    - detection_[image.jpg](image)
+    - prediction_[5o76w1SBXJZQ1dvkdija.jpg](image)
 
-
-- lookup: colour
-  examples: |
-    - Giallo
-    - Verde
-    - Nero
-    - Rosso
-    - Grigio
-    - Rosa

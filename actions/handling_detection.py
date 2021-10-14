@@ -23,15 +23,11 @@ class customAction(Action):
           #request = requests.get('http://api.icndb.com/jokes/random').json() #make an api call
           #joke = request['value']['joke'] #extract a joke from returned json response
 
-          # Codice per fare una api call
-          #r = requests.post('http://127.0.0.1:5001/predict', data = {'id':'1_short_sleeve_top_3145741-64470548-2560-1440.jpg'})
-
           #get del valore contenuto nello slot image 
           image_value = tracker.get_slot('image')
           print(image_value)
-          if(image_value=="image.jpg"):
-
-               #Chiamata all'API search con invio dei parametri "product_type" e "color_value"
+          if "detection" in image_value:
+               #Chiamata all'API detection con invio del parametro "image_value"
                r = requests.post('http://127.0.0.1:5001/detection', data = {'image': image_value})
           
                #lenght = len(r.text)
@@ -45,18 +41,31 @@ class customAction(Action):
                     msg = { "type": "detection_results", "payload": { "title": "Detection results", "src": r.text } }
                     dispatcher.utter_message(text="Seleziona uno degli oggetti individuati: ",attachment = msg)
 
-          else:
+          elif "prediction" in image_value:
                # Estraggo il tipo e il colore se l'utente ha dato qualche preferenza prima di selezionare la foto
                product_type = tracker.get_slot('product')
                color_value = tracker.get_slot('colour')
 
-               print(product_type)
-               print(color_value)
+               image_value = image_value.rpartition('_')[2]
+               print(image_value)
+               
+               #print(product_type)
+               #print(color_value)
+
+               if(product_type==None):
+                    product_type = "Default"
+               
+               if(color_value==None):
+                    color_value = "Default"
 
                # Call API predict
                r = requests.post('http://127.0.0.1:5001/predict', data = {'id':image_value,'color':color_value,'type': product_type})
-               msg = { "type": "prediction_results", "payload": { "title": "Prediction results", "src": r.text } }
-               dispatcher.utter_message(text="Risultati della ricerca: ",attachment = msg)
+               print(r.text)
+               if (r.text == "Null"):
+                    dispatcher.utter_message(text="Mi dispiace, ma la ricerca non ha prodotto risultati.")
+               else: 
+                    msg = { "type": "prediction_results", "payload": { "title": "Prediction results", "src": r.text } }
+                    dispatcher.utter_message(text="Risultati della ricerca: ",attachment = msg)
             
 
           #reset di tutti gli slot 

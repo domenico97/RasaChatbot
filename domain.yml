@@ -1,74 +1,44 @@
 version: '2.0'
-config:
-  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet:
-    use_entities: true
-- type_of_product:
-    use_entities: true
-- nlu_fallback:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- affirm:
-    use_entities: true
-- deny:
-    use_entities: true
-- mood_great:
-    use_entities: true
-- mood_unhappy:
-    use_entities: true
-- bot_challenge:
-    use_entities: true
-- info:
-    use_entities: true
-- reso:
-    use_entities: true
-- help:
-    use_entities: true
-- upload:
-    use_entities: true
-- cart:
-    use_entities: true
-- give_time:
-    use_entities: true
-- no_object_detected:
-    use_entities: true
-- detection:
-    use_entities: true
-- search_function:
-    use_entities: true
-- search_product_by_text:
-    use_entities: true
-- obj_detection:
-    use_entities: true
+- search_function
+- upload
+- obj_detection
+- greet
+- type_of_product
+- nlu_fallback
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- info
+- reso
+- help
+- cart
+- give_time
+- no_object_detected
+- detection
+- search_product_by_text
 entities:
 - colour
 - image
 - product
 slots:
   product:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: true
   colour:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: true
   image:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
+    type: text
     influence_conversation: true
   requested_slot:
-    type: rasa.shared.core.slots.UnfeaturizedSlot
-    initial_value: null
-    auto_fill: true
+    type: unfeaturized
     influence_conversation: false
 responses:
   utter_greet:
@@ -133,41 +103,40 @@ responses:
       payload: dropDown
       data:
       - label: Qualsiasi
-        value: "Qualsiasi"
+        value: Qualsiasi
       - label: Maglietta/T-Shirt
-        value: "Maglia"
+        value: Maglia
       - label: Pantaloncino/Shorts
-        value: "Pantaloncino"
-      
+        value: Pantaloncino
   utter_ask_colour:
   - text: Seleziona il colore che preferisci
     custom:
       payload: dropDown
       data:
       - label: Qualsiasi
-        value: "Qualsiasi"
+        value: Qualsiasi
       - label: Rosso
-        value: "Rosso"
+        value: Rosso
       - label: Blu
-        value: "Blu"
+        value: Blu
       - label: Giallo
-        value: "Giallo"
+        value: Giallo
       - label: Marrone
-        value: "Marrone"
+        value: Marrone
       - label: Arancione
-        value: "Arancione"
+        value: Arancione
       - label: Verde
-        value: "Verde"
+        value: Verde
       - label: Nero
-        value: "Nero"
+        value: Nero
       - label: Viola
-        value: "Viola"
+        value: Viola
       - label: Rosa
-        value: "Rosa"
+        value: Rosa
       - label: Bianco
-        value: "Bianco"
+        value: Bianco
       - label: Grigio
-        value: "Grigio"
+        value: Grigio
   utter_slots_values:
   - text: Perfetto, allora inizio la ricerca per {product} di colore {colour}!
   utter_search_function:
@@ -180,11 +149,15 @@ responses:
       payload: quickReplies
     text: Per cercare un prodotto puoi caricare un'immagine oppure puoi effettuare una ricerca tramite filtri
 actions:
-- action_search_by_text
-- utter_ask_product
-- utter_ask_colour
-- utter_slots_values
 - action_detection
+- action_search_by_text
+- utter_ask_colour
+- utter_ask_product
+- utter_greet
+- utter_please_rephrase
+- utter_search_function
+- utter_slots_values
+- utter_upload
 forms:
   product_form:
     required_slots:
@@ -192,4 +165,3 @@ forms:
       - type: from_text
       colour:
       - type: from_text
-e2e_actions: []

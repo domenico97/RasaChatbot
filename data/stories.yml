@@ -85,3 +85,23 @@ stories:
   - action: utter_upload
   - intent: obj_detection
   - action: action_detection
+
+- story: interactive_story_3
+  steps:
+  - intent: obj_detection
+  - action: utter_please_rephrase
+
+- story: interactive_story_4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search_function
+  - action: utter_search_function
+  - intent: upload
+  - action: utter_upload
+  - intent: obj_detection
+    entities:
+    - image: detection_zXCFhJ343SIJBBn53Ymh.jpg
+  - slot_was_set:
+    - image: detection_zXCFhJ343SIJBBn53Ymh.jpg
+  - action: action_detection

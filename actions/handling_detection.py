@@ -32,8 +32,7 @@ class customAction(Action):
           
                #lenght = len(r.text)
                response = r.text
-               print(response)
-               #print(r.text)
+               #print(response)
                if (r.text == "Null"):
                     dispatcher.utter_message(image="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg):focal(1286x278:1288x276)/origin-imgresizer.eurosport.com/2021/06/04/3145741-64470548-2560-1440.jpg", text="Mi dispiace, ma non sono stato in grado di individuare nulla. Carica foto simili a quella mostrata di seguito")
                else:
@@ -60,7 +59,7 @@ class customAction(Action):
 
                # Call API predict
                r = requests.post('http://127.0.0.1:5001/predict', data = {'id':image_value,'color':color_value,'type': product_type})
-               print(r.text)
+               #print(r.text)
                if (r.text == "Null"):
                     dispatcher.utter_message(text="Mi dispiace, ma la ricerca non ha prodotto risultati.")
                else: 

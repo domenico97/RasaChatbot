@@ -8,10 +8,12 @@ services:
     ports:
       - 5005:5005
     command: run -m models --enable-api --cors "*"
-  action_server:
-    image: rasa/rasa-sdk:2.8.2 
+  action-server:
+    image: rasa/rasa-sdk
     container_name: action_server
     volumes:
      - ./actions:/app/actions
     ports:
-      - 5056:5056
+      - 5055:5055
+    depends_on:
+      - rasa-server

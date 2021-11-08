@@ -170,6 +170,9 @@ nlu:
     - trova una [maglia]{"entity": "product", "value": "Maglia"} [nera]{"entity": "colour", "value": "Nero"}
     - cerca [maglia]{"entity": "product", "value": "Maglia"} [gialla]{"entity": "colour", "value": "Giallo"}
     - cerca [pantaloncini]{"entity": "product", "value": "Pantaloncino"} [gialli]{"entity": "colour", "value": "Giallo"}
+    - cerca [maglietta da basket]{"entity": "product", "value": "Maglia"} [grigia]{"entity": "colour", "value": "Grigio"}
+    - ricerca [maglia da football]{"entity": "product", "value": "Maglia"} [nera]{"entity": "colour", "value": "Nero"}
+    - vorrei cercare una [maglia]{"entity": "product", "value": "Maglia"} di colore [rosso]{"entity": "colour", "value": "Rosso"}
 - intent: upload
   examples: |
     - upload
@@ -200,6 +203,9 @@ nlu:
     - maglietta
     - t-shirt
     - maglietta a maniche corte
+    - maglietta da basket
+    - maglia da football
+    - maglia da calcio
 - synonym: Pantaloncino
   examples: |
     - pantalone

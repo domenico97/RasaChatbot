@@ -49,7 +49,7 @@ responses:
       - payload: help
         title: Help
       payload: quickReplies
-    text: Ciao, sono il bot Visual Shopper e sono qui per assisterti.
+    text: Ciao, mi chiamo SIA, come la cantante, e sono qui per assisterti 😊.
   utter_did_that_help:
   - custom:
       data:
@@ -60,12 +60,12 @@ responses:
       payload: quickReplies
     text: Sono stato di aiuto?
   utter_happy:
-  - text: Bene, è stato un piacere poterti aiutare 😊
+  - text: Bene, è stato un piacere aiutarti 😊
   utter_goodbye:
   - text: È stato un piacere aiutarti, torna a trovarci presto 😉
   - text: Ciao, a presto 👋🏼
   utter_iamabot:
-  - text: Io sono un Bot sviluppato con Rasa 🤖
+  - text: Io sono SIA, un Bot sviluppato con Rasa 🤖
   utter_please_rephrase:
   - text: Scusami, non ho capito. Potresti ripetere?
   utter_info:
@@ -81,7 +81,7 @@ responses:
         title: Reso e rimborsi
       - description: Puoi effettuare la ricerca di un prodotto di tuo interesse. La ricerca può essere effettuata anche caricando un'immagine. Digita "ricerca" e ti guiderò passo passo 😊.
         title: Cosa so fare?
-      - description: Se riscontri qualche problema contattaci al seguente indirizzo email "visual.shopper@outlook.com".
+      - description: Se riscontri qualche problema contattaci al seguente indirizzo email "fashion.store@outlook.com".
         title: Problemi
       payload: collapsible
     text: Ecco alcune informazioni che potrebbero esserti utili.
@@ -143,9 +143,9 @@ responses:
   - custom:
       data:
       - payload: upload
-        title: Ricerca tramite foto
+        title: Ricerca con foto
       - payload: text search
-        title: Ricerca tramite filtri
+        title: Ricerca con filtri
       payload: quickReplies
     text: Per cercare un prodotto puoi caricare un'immagine oppure puoi effettuare una ricerca tramite filtri
 actions:

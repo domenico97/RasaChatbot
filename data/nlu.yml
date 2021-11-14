@@ -126,7 +126,6 @@ nlu:
     - Come effettuare il reso?
     - Tempistiche reso
     - entro quando posso restituire il prodotto?
-    - rosso
 - intent: help
   examples: |
     - aiuto
@@ -201,11 +200,19 @@ nlu:
   examples: |
     - maglia
     - maglietta
+    - magliette
     - t-shirt
+    - maglie
+    - Maglie
+    - Magliette
     - maglietta a maniche corte
+    - magliette a maniche corte
     - maglietta da basket
+    - magliette da basket
     - maglia da football
+    - magliette da football
     - maglia da calcio
+    - magliette da calcio
 - synonym: Pantaloncino
   examples: |
     - pantalone
@@ -217,16 +224,23 @@ nlu:
 - synonym: Rosso
   examples: |
     - rossa
+    - rosse
+    - Rosse
 - synonym: Blu
   examples: |
     - Blue
+    - blu
 - synonym: Nero
   examples: |
     - nera
+    - Nere
+    - nere
 - synonym: Giallo
   examples: |
     - gialla
     - gialli
+    - gialle
+    - Gialle
 - regex: image
   examples: |
     - .*\.(gif|jpe?g|bmp|png)

@@ -60,7 +60,12 @@ responses:
       payload: quickReplies
     text: Sono stato di aiuto?
   utter_happy:
-  - text: Bene, è stato un piacere aiutarti 😊
+  - custom:
+      data:
+      - payload: cerca prodotto
+        title: Effettua una ricerca
+      payload: quickReplies
+    text: Bene, è stato un piacere aiutarti 😊. Se desideri effettuare una ricerca, clicca sul seguente pulsante
   utter_goodbye:
   - text: È stato un piacere aiutarti, torna a trovarci presto 😉
   - text: Ciao, a presto 👋🏼
@@ -75,12 +80,12 @@ responses:
   utter_help:
   - custom:
       data:
+      - description: Puoi effettuare la ricerca di un prodotto di tuo interesse. La ricerca può essere effettuata anche caricando un'immagine. Digita "ricerca" e ti guiderò passo passo 😊.
+        title: Cosa so fare?
       - description: I tempi di spedizione sono di 2-5 giorni. Controlla sempre il link di tracciabilità che ti inviamo per conoscere lo stato della spedizione. La spedizione standard avviene attraverso Poste Italiane ed è gratuita.
         title: Spedizione e costi
       - description: Gli articoli, non indossati e non danneggiati, possono essere restituiti entro 30 giorni dal momento della consegna, mentre il rimborso avviene entro 14 giorni lavorativi dalla consegna del pacco al corriere.
         title: Reso e rimborsi
-      - description: Puoi effettuare la ricerca di un prodotto di tuo interesse. La ricerca può essere effettuata anche caricando un'immagine. Digita "ricerca" e ti guiderò passo passo 😊.
-        title: Cosa so fare?
       - description: Se riscontri qualche problema contattaci al seguente indirizzo email "fashion.store@outlook.com".
         title: Problemi
       payload: collapsible

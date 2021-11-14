@@ -96,7 +96,12 @@ responses:
       title: Carica immagine
     text: Carica una immagine cliccando sul seguente pulsante
   utter_deny:
-  - text: Mi dispiace non esserti stato di aiuto, riprova effettuando una nuova ricerca.
+  - custom:
+      data:
+      - payload: cerca prodotto
+        title: Effettua una ricerca
+      payload: quickReplies
+    text: Mi dispiace non esserti stato di aiuto, riprova effettuando una nuova ricerca.
   utter_cart:
   - text: Il prodotto è stato aggiunto al carrello.
   utter_no_object_detected:
